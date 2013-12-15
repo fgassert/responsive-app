@@ -1,0 +1,19 @@
+baseurl: '/responsive-app'
+permalink: pretty
+markdown: rdiscount
+
+stylus:
+  compress: true
+
+prose:
+  rooturl: '_content'
+  siteurl: '/responsive-app'
+  relativeLinks: 'links.jsonp'
+  media: 'media'
+  metadata:
+    _content:
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "main"
+

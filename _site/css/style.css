@@ -1,0 +1,11 @@
+#ra-container{transition:transform .5s;-webkit-transition:-webkit-transform .5s}
+#ra-nav-buttons ul{padding-left:0;}
+#ra-nav-buttons ul li{padding:3px;display:inline-block;list-style:none}
+.ra-small #ra-nav-buttons{width:100%;}
+.ra-small #ra-nav-buttons ul li{display:block;width:100%}
+#ra-panel-l-content ul{padding-left:0;}
+#ra-panel-l-content ul li{display:block;width:100%;list-style:none}
+#ra-panel-l{background:#eef}
+#ra-panel-r{background:#efe}
+#ra-main{background:#fee}
+#ra-main-responsivemenu{background:#eee}

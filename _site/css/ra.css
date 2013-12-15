@@ -1,0 +1,27 @@
+html,body{margin:0;height:100%;width:100%;max-width:100%;overflow:hidden}
+h1{font-size:2em}
+img{border:0}
+#ra-container{position:absolute;left:0;width:100%;height:100%}
+#ra-panel-l{position:absolute;width:284px;max-width:100%;height:100%;overflow-y:scroll}
+#ra-headmatter,#ra-header,#ra-nav,#ra-main-responsivemenu{width:100%}
+#ra-nav-subhead{float:left}
+#ra-nav-btn-showhide{float:left;clear:both}
+#ra-nav-buttons{float:right}
+#ra-main-responsivemenu-btn-l{float:left}
+#ra-main-responsivemenu-btn-r{float:right}
+#ra-main{position:absolute;overflow-y:scroll;height:100%;width:100%}
+#ra-panel-r{position:absolute;bottom:0;overflow-y:auto}
+#ra-cover{position:absolute;opacity:0;width:100%;height:100%}
+.ra-large #ra-main{left:284px}
+.ra-large #ra-panel-l{left:0}
+.ra-large #ra-panel-r{left:284px;height:auto;min-height:0;max-height:40%;width:100%}
+.ra-large #ra-main-responsivemenu{display:none}
+.ra-large .ra-hidewhenlarge{display:none !important}
+.ra-small #ra-main{left:0}
+.ra-small #ra-panel-l{left:-284px}
+.ra-small #ra-panel-r{width:284px;max-width:100%;height:100%;right:-284px}
+.ra-small .ra-hidewhensmall{display:none !important}
+.ra-hidden{display:none !important}
+.clearfix:before,.clearfix:after{content:'';display:table}
+.clearfix:after{clear:both}
+.ra-btn{-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default}
