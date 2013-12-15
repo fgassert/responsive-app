@@ -32,21 +32,28 @@ title: Responsive App
 	</div>
       </div>
       <div id='ra-panel-l'>
-	{% include panel1-content.html %}
-      </div>
-      <div id='ra-main-responsivemenu' class='clearfix ra-hidewhenlarge'>
-	<div id='ra-main-responsivemenu-btn-l' class='ra-btn'>
-	  {% include main-responsivemenu-l.html %}
+	<div id='ra-panel-l-content'>
+	  {% include panel1-content.html %}
 	</div>
-	<div id='ra-main-responsivemenu-btn-r' class='ra-btn'>
-	  {% include main-responsivemenu-r.html %}
+      </div>
+      <div id='ra-responsivemenu' class='clearfix ra-hidewhenlarge'>
+	<div id='ra-responsivemenu-header'>
+	  {% include responsivemenu-header.html %}
+	</div>
+	<div id='ra-responsivemenu-btn-l' class='ra-btn'>
+	  {% include responsivemenu-l.html %}
+	</div>
+	<div id='ra-responsivemenu-btn-r' class='ra-btn'>
+	  {% include responsivemenu-r.html %}
 	</div>
       </div>
       <div id='ra-main'>
           {% include main-content.html %}
       </div>
       <div id='ra-panel-r'>
-	{% include panel2-content.html %}
+	<div id='ra-panel-r-content'>
+	  {% include panel2-content.html %}
+	</div>
       </div>
       <div id='ra-cover' class='ra-hidden'></div>
     </div>

@@ -44,14 +44,12 @@ img {
 #ra-panel-l {
   position: absolute;
   width: 284px;
-  max-width: 100%;
   height: 100%;
-  overflow-y: scroll;
 }
 /* ra-headmatter element contains the header, subheader, and nav
  * 
  * The ra framework will move the headmatter from to top of the screen or 
- * the top of panel1 depending on screen size
+ * the top of panel1-content depending on screen size
  * 
  * ra-main-responsivemenu only appears when screen is small
  * contains buttons to show and hide side panels
@@ -80,13 +78,21 @@ img {
 }
 /* responsivemenu button shows/hides left panel on click
  */
-#ra-main-responsivemenu-btn-l {
-  float: left;
+#ra-responsivemenu-btn-l {
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 /* responsivemenu button shows/hides right panel on click
  */
-#ra-main-responsivemenu-btn-r {
-  float: right;
+#ra-responsivemenu-btn-r {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+#ra-responsivemenu-header {
+  display: inline;
+  text-align: center;
 }
 /* main full screen content */
 #ra-main {
@@ -102,7 +108,9 @@ img {
 #ra-panel-r {
   position: absolute;
   bottom: 0;
-  overflow-y: auto;
+}
+#ra-panel-r-content {
+  overflow-y: scroll;
 }
 /* ra-cover covers the main content on small screens when side panels are open
  * clicking on the cover returns the view to the main content
@@ -120,15 +128,20 @@ img {
 .ra-large #ra-panel-l {
   left: 0;
 }
+.ra-large #ra-panel-l-content {
+  height: inherit;
+  overflow-y: scroll;
+}
 .ra-large #ra-panel-r {
   left: 284px;
-  height: auto;
   min-height: 0;
-/* default max height for panel when at screen bottom */
-  max-height: 40%;
   width: 100%;
+/* default max height for panel when at screen bottom */
 }
-.ra-large #ra-main-responsivemenu {
+.ra-large #ra-panel-r-content {
+  max-height: 200px;
+}
+.ra-large #ra-responsivemenu {
   display: none;
 }
 .ra-large .ra-hidewhenlarge {
@@ -139,16 +152,32 @@ img {
   left: 0;
 }
 .ra-small #ra-panel-l {
-  left: -284px;
+  right: 100%;
+  overflow-y: scroll;
+}
+.ra-small #ra-panel-l-content {
+  height: 100%;
 }
 .ra-small #ra-panel-r {
   width: 284px;
-  max-width: 100%;
   height: 100%;
-  right: -284px;
+  left: 100%;
 }
 .ra-small .ra-hidewhensmall {
   display: none !important;
+}
+/* full screen mode */
+.ra-fullscreen #ra-panel-l {
+  display: none;
+}
+.ra-fullscreen #ra-panel-r {
+  display: none;
+}
+.ra-fullscreen #ra-headmatter {
+  display: none;
+}
+.ra-fullscreen #ra-responsivemenu {
+  display: none;
 }
 /* hiding elements */
 .ra-hidden {
@@ -162,6 +191,10 @@ img {
 }
 .clearfix:after {
   clear: both;
+}
+/* ie7 */
+.clearfix {
+  zoom: 1;
 }
 /* basic styling for button divs */
 .ra-btn {

@@ -14,6 +14,8 @@
 #ra-nav-buttons ul li {
   padding: 3px;
   display: inline-block;
+  zoom: 1;
+  *display: inline;
   list-style: none;
 }
 /* the .ra-small class is added to #ra-container when in small screen mode
@@ -44,6 +46,15 @@
 #ra-main {
   background: #fee;
 }
-#ra-main-responsivemenu {
+#ra-responsivemenu {
   background: #eee;
+}
+#ra-nav {
+  background: #eff;
+}
+#ra-nav-buttons {
+  background: #fef;
+}
+#ra-headmatter {
+  background: #ffe;
 }
