@@ -1,27 +1,174 @@
-html,body{margin:0;height:100%;width:100%;max-width:100%;overflow:hidden}
-h1{font-size:2em}
-img{border:0}
-#ra-container{position:absolute;left:0;width:100%;height:100%}
-#ra-panel-l{position:absolute;width:284px;max-width:100%;height:100%;overflow-y:scroll}
-#ra-headmatter,#ra-header,#ra-nav,#ra-main-responsivemenu{width:100%}
-#ra-nav-subhead{float:left}
-#ra-nav-btn-showhide{float:left;clear:both}
-#ra-nav-buttons{float:right}
-#ra-main-responsivemenu-btn-l{float:left}
-#ra-main-responsivemenu-btn-r{float:right}
-#ra-main{position:absolute;overflow-y:scroll;height:100%;width:100%}
-#ra-panel-r{position:absolute;bottom:0;overflow-y:auto}
-#ra-cover{position:absolute;opacity:0;width:100%;height:100%}
-.ra-large #ra-main{left:284px}
-.ra-large #ra-panel-l{left:0}
-.ra-large #ra-panel-r{left:284px;height:auto;min-height:0;max-height:40%;width:100%}
-.ra-large #ra-main-responsivemenu{display:none}
-.ra-large .ra-hidewhenlarge{display:none !important}
-.ra-small #ra-main{left:0}
-.ra-small #ra-panel-l{left:-284px}
-.ra-small #ra-panel-r{width:284px;max-width:100%;height:100%;right:-284px}
-.ra-small .ra-hidewhensmall{display:none !important}
-.ra-hidden{display:none !important}
-.clearfix:before,.clearfix:after{content:'';display:table}
-.clearfix:after{clear:both}
-.ra-btn{-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default}
+/* Responsive App base css
+ * 
+ * Controls full screen responsive layout
+ * To edit styles, edit style.css
+ *
+ */
+/* 
+ * Default panel width 284px
+ * override in ra.js options
+ */
+/* normalize */
+html,
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+h1 {
+  font-size: 2em;
+}
+img {
+  border: 0;
+}
+/* responsive-app elements */
+/* ra-container element contains all other elements
+ * 
+ * The ra framework uses css transforms to move the container
+ * to show and hide off screen panels
+ *
+ * The container element will have .ra-small or .ra-large classes
+ * depending on screen size
+ *
+ */
+#ra-container {
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+/* ra-panel1 is positioned on the left and is hidden when screen size is small
+ */
+#ra-panel-l {
+  position: absolute;
+  width: 284px;
+  max-width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+/* ra-headmatter element contains the header, subheader, and nav
+ * 
+ * The ra framework will move the headmatter from to top of the screen or 
+ * the top of panel1 depending on screen size
+ * 
+ * ra-main-responsivemenu only appears when screen is small
+ * contains buttons to show and hide side panels
+ */
+#ra-headmatter,
+#ra-header,
+#ra-nav,
+#ra-main-responsivemenu {
+  width: 100%;
+}
+#ra-nav-subhead {
+  float: left;
+}
+/* showhide element listens for click events to show and hide the nav-buttons
+ * hidden on large screens
+ */
+#ra-nav-btn-showhide {
+  float: left;
+  clear: both;
+}
+/* navigation buttons container
+ * visibility toggled by nav-btn-showhide
+ */
+#ra-nav-buttons {
+  float: right;
+}
+/* responsivemenu button shows/hides left panel on click
+ */
+#ra-main-responsivemenu-btn-l {
+  float: left;
+}
+/* responsivemenu button shows/hides right panel on click
+ */
+#ra-main-responsivemenu-btn-r {
+  float: right;
+}
+/* main full screen content */
+#ra-main {
+  position: absolute;
+  overflow-y: scroll;
+  height: 100%;
+  width: 100%;
+}
+/* right/bottom panel
+ * appears at bottom of screen on large screens
+ * hidden on right on small screens
+ */
+#ra-panel-r {
+  position: absolute;
+  bottom: 0;
+  overflow-y: auto;
+}
+/* ra-cover covers the main content on small screens when side panels are open
+ * clicking on the cover returns the view to the main content
+ */
+#ra-cover {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+/* large screens */
+.ra-large #ra-main {
+  left: 284px;
+}
+.ra-large #ra-panel-l {
+  left: 0;
+}
+.ra-large #ra-panel-r {
+  left: 284px;
+  height: auto;
+  min-height: 0;
+/* default max height for panel when at screen bottom */
+  max-height: 40%;
+  width: 100%;
+}
+.ra-large #ra-main-responsivemenu {
+  display: none;
+}
+.ra-large .ra-hidewhenlarge {
+  display: none !important;
+}
+/* small screens */
+.ra-small #ra-main {
+  left: 0;
+}
+.ra-small #ra-panel-l {
+  left: -284px;
+}
+.ra-small #ra-panel-r {
+  width: 284px;
+  max-width: 100%;
+  height: 100%;
+  right: -284px;
+}
+.ra-small .ra-hidewhensmall {
+  display: none !important;
+}
+/* hiding elements */
+.ra-hidden {
+  display: none !important;
+}
+/* clearfix */
+.clearfix:before,
+.clearfix:after {
+  content: '';
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+/* basic styling for button divs */
+.ra-btn {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
