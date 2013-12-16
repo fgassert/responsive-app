@@ -7,7 +7,7 @@ options: {}
 <head>
   <title>{{page.title}}</title>
   <meta charset='UTF-8'/>
-  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no' />
   <link href='css/ra.css' rel='stylesheet' />
   <link href='css/style.css' rel='stylesheet' />
   <!--[if IE]>
@@ -15,6 +15,7 @@ options: {}
   <![endif]-->
 </head>
 <body>
+
     <div id='ra-container' class='ra-large'>
       <div id='ra-headmatter'>
 	<div id='ra-header' class='clearfix'>
@@ -58,6 +59,7 @@ options: {}
       </div>
       <div id='ra-cover' class='ra-hidden'></div>
     </div>
+
     <!--Initialize the responsive app framework!-->
     <script src='js/ra.js'></script>
     <script>ra = new ra({{page.options}});</script>
