@@ -174,7 +174,7 @@ var ra = function(window, document) {
 		    // if the screen is now small
 		    // move headmatter to left panel
 		    panelLContent.insertBefore(headMatter,panelLContent.childNodes[0]);
-		    h = document.body.offsetHeight-responsiveMenu.offsetHeight;
+		    h = window.innerHeight-responsiveMenu.offsetHeight;
 		    w = config.panelWidth+'px';
 		    css(panelL, {width: w, height: ''});
 		    css(main, {height: h+'px', width:'', left:''});
@@ -200,12 +200,14 @@ var ra = function(window, document) {
 	    };
 	    if (screenSize() === large) {
 		// resize panels
-		w = document.body.offsetWidth-panelL.offsetWidth;
-		h = document.body.offsetHeight-headMatter.offsetHeight;
+		w = window.innerWidth-panelL.offsetWidth;
+		h = window.innerHeight-headMatter.offsetHeight;
 		css(panelL, {height: h+'px'});
 		css(panelR, {width: w+'px'});
 		h -= panelR.offsetHeight;
 		css(main, {width: w+'px', height: h+'px'});
+	    } else if (screenSize() === small) {
+
 	    };
 	};
 	// turn off panel
