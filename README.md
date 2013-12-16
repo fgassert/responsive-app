@@ -15,7 +15,7 @@ Supports all modern browsers, IE 8+, iOS.
 ### How it works
 The responsive app framework divides the screen realestate into four sections: two responsive panels, headmatter, and main content.
 
-![layout]()
+![layout](http://raw.github.com/fgassert/responsive-app/master/fullscreen-app-layout.png)
 
 The framework is designed to be easily modified by inserting HTML into these sections. Rather than creating a layout on the fly, the framework relies on static HTML and CSS for better performance.
 
