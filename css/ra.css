@@ -62,26 +62,9 @@ img {
  * contains buttons to show and hide side panels
  */
 #ra-headmatter,
-#ra-header,
-#ra-nav,
 #ra-main-responsivemenu {
   width: 100%;
-}
-#ra-nav-subhead {
-  float: left;
-}
-/* showhide element listens for click events to show and hide the nav-buttons
- * hidden on large screens
- */
-#ra-nav-btn-showhide {
-  float: left;
-  clear: both;
-}
-/* navigation buttons container
- * visibility toggled by nav-btn-showhide
- */
-#ra-nav-buttons {
-  float: right;
+  overflow: auto;
 }
 /* responsivemenu button shows/hides left panel on click
  */
@@ -118,6 +101,7 @@ img {
 }
 #ra-panel-r-content {
   overflow-y: auto;
+  float: right;
 }
 /* ra-cover covers the main content on small screens when side panels are open
  * clicking on the cover returns the view to the main content
@@ -143,10 +127,10 @@ img {
   left: 284px;
   min-height: 0;
   width: 100%;
-/* default max height for panel when at screen bottom */
 }
 .ra-large #ra-panel-r-content {
-  max-height: 200px;
+/* default max height for panel when at screen bottom */
+  max-height: 150px;
 }
 .ra-large #ra-responsivemenu {
   display: none;
@@ -161,6 +145,7 @@ img {
 .ra-small #ra-panel-l {
   right: 100%;
   overflow-y: auto;
+  height: 100%;
 }
 .ra-small #ra-panel-l-content {
   height: 100%;
