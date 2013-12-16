@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="3299px" height="806px" viewBox="0 0 3299 806" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>fullscreen-app-layout</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Group" sketch:type="MSLayerGroup" transform="translate(8.000000, 102.000000)">
+            <rect id="Rectangle-1" stroke="#979797" fill="#0099CC" sketch:type="MSShapeGroup" x="0" y="44" width="960" height="32"></rect>
+            <rect id="Rectangle-1-copy" stroke="#979797" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="960" height="44"></rect>
+            <rect id="Rectangle-2" stroke="#979797" fill="#D8D8D8" sketch:type="MSShapeGroup" x="0" y="76" width="285" height="520"></rect>
+            <rect id="Rectangle-3" stroke="#979797" sketch:type="MSShapeGroup" x="284" y="76" width="676" height="429"></rect>
+            <rect id="Rectangle-5" stroke="#979797" fill="#F7F7F7" sketch:type="MSShapeGroup" x="284" y="293" width="676" height="271"></rect>
+            <text id="HEADER" sketch:type="MSTextLayer" font-family="Arial MT Std" font-size="24" font-style="condensed" font-weight="bold" fill="#000000">
+                <tspan x="11" y="30">HEADER</tspan>
+            </text>
+            <text id="Navigation" sketch:type="MSTextLayer" font-family="Arial MT Std" font-size="20" font-style="condensed" font-weight="bold" fill="#000000">
+                <tspan x="854" y="67">Navigation</tspan>
+            </text>
+            <text id="Sub-header" sketch:type="MSTextLayer" font-family="Arial MT Std" font-size="20" font-style="condensed" font-weight="bold" fill="#000000">
+                <tspan x="11" y="67">Sub-header</tspan>
+            </text>
+            <text id="UI-Panel-1" sketch:type="MSTextLayer" font-family="Arial MT Std" font-size="20" font-style="condensed" font-weight="bold" fill="#000000">
+                <tspan x="10" y="100">UI Panel 1</tspan>
+            </text>
+            <text id="“Full-streen”-conten" sketch:type="MSTextLayer" font-family="Arial MT Std" font-size="20" font-style="condensed" font-weight="bold" fill="#000000">
+                <tspan x="296" y="102">“Full streen” content</tspan>
+            </text>
+            <text id="UI-Panel-2-header" sketch:type="MSTextLayer" font-family="Arial MT Std" font-size="20" font-style="condensed" font-weight="bold" fill="#000000">
+                <tspan x="296" y="317">UI Panel 2 header</tspan>
+            </text>
+            <rect id="Rectangle-60" stroke="#D0011B" stroke-width="2" sketch:type="MSShapeGroup" x="285" y="324" width="676" height="181"></rect>
+            <text id="UI-Panel-2-content" sketch:type="MSTextLayer" font-family="Arial MT Std" font-size="20" font-style="condensed" font-weight="bold" fill="#000000">
+                <tspan x="296" y="348">UI Panel 2 content</tspan>
+            </text>
+            <rect id="Rectangle-14" stroke="#D0011B" stroke-width="10" sketch:type="MSShapeGroup" x="2" y="0" width="952" height="505"></rect>
+            <text id="×" sketch:type="MSTextLayer" font-family="Arial MT Std" font-size="24" font-style="condensed" font-weight="bold" fill="#000000">
+                <tspan x="937" y="314">×</tspan>
+            </text>
+        </g>
+        <text id="Large-Srceen" sketch:type="MSTextLayer" font-family="Arial MT Std" font-size="48" font-style="condensed" font-weight="bold" fill="#000000">
+            <tspan x="369" y="54">Large Srceen</tspan>
+        </text>
+        <text id="Small-Screen" sketch:type="MSTextLayer" font-family="Arial MT Std" font-size="36" font-style="condensed" font-weight="bold" sketch:alignment="middle" fill="#000000">
+            <tspan x="1474.486" y="27">Small Screen</tspan>
+            <tspan x="1465.324" y="70">(e.g. &lt; 640 px)</tspan>
+        </text>
+        <g id="Group" sketch:type="MSLayerGroup" transform="translate(1129.000000, 102.000000)">
+            <rect id="Rectangle-3" stroke="#979797" sketch:type="MSShapeGroup" x="283" y="0" width="320" height="480"></rect>
+            <rect id="Rectangle-1-copy-2" stroke="#979797" fill="#FFFFFF" sketch:type="MSShapeGroup" x="283" y="0" width="322" height="40"></rect>
+            <rect id="Rectangle-5" stroke="#F7F7F7" fill="#D8D8D8" sketch:type="MSShapeGroup" x="603" y="0" width="285" height="575"></rect>
+            <text id="UI-Panel-2" sketch:type="MSTextLayer" font-family="Arial MT Std" font-size="20" font-style="condensed" font-weight="bold" fill="#000000">
+                <tspan x="618" y="30">UI Panel 2</tspan>
+            </text>
+            <text id="-☰-Lorem" sketch:type="MSTextLayer" font-family="Arial MT Std" font-size="24" font-style="condensed" font-weight="bold" fill="#000000">
+                <tspan x="289" y="28"> </tspan>
+                <tspan x="295" y="28" font-family="Apple Symbols" font-weight="normal">☰ </tspan>
+                <tspan x="324.097656" y="28" font-size="20">Lorem</tspan>
+            </text>
+            <text id="Ipsum--" sketch:type="MSTextLayer" font-family="Arial MT Std" font-size="20" font-style="condensed" font-weight="bold" fill="#000000">
+                <tspan x="506" y="26">Ipsum</tspan>
+                <tspan x="556" y="26" font-size="24"> </tspan>
+                <tspan x="562" y="26" font-family="Apple Symbols" font-size="24" font-weight="normal"> </tspan>
+            </text>
+            <g id="Rectangle-11-+-Rectangle-11-copy-+-Rectangle-11-copy-2" transform="translate(577.000000, 11.000000)" fill="#000000" sketch:type="MSShapeGroup">
+                <rect id="Rectangle-11" x="0" y="7" width="4" height="11"></rect>
+                <rect id="Rectangle-11-copy" x="6" y="0" width="4" height="18"></rect>
+                <rect id="Rectangle-11-copy-2" x="12" y="5" width="4" height="13"></rect>
+            </g>
+            <g>
+                <path d="M0,136 L0,205 L144.753906,205 L285,205 L285,136 L0,136 Z" id="Rectangle-1" stroke="#979797" fill="#0099CC" sketch:type="MSShapeGroup"></path>
+                <rect id="Rectangle-1-copy" stroke="#979797" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="285" height="136"></rect>
+                <rect id="Rectangle-2" stroke="#979797" fill="#D8D8D8" sketch:type="MSShapeGroup" x="0" y="205" width="285" height="499"></rect>
+                <text id="HEADER" sketch:type="MSTextLayer" font-family="Arial MT Std" font-size="24" font-style="condensed" font-weight="bold" fill="#000000">
+                    <tspan x="12" y="32">HEADER</tspan>
+                </text>
+                <text id="Sub-header" sketch:type="MSTextLayer" font-family="Arial MT Std" font-size="20" font-style="condensed" font-weight="bold" fill="#000000">
+                    <tspan x="12" y="160">Sub-header</tspan>
+                </text>
+                <text id="UI-Panel-1" sketch:type="MSTextLayer" font-family="Arial MT Std" font-size="20" font-style="condensed" font-weight="bold" fill="#000000">
+                    <tspan x="12" y="231">UI Panel 1</tspan>
+                </text>
+                <text id="-☰-Navigation" sketch:type="MSTextLayer" font-family="Arial MT Std" font-size="24" font-style="condensed" font-weight="bold" fill="#000000">
+                    <tspan x="11" y="191"> </tspan>
+                    <tspan x="17" y="191" font-family="Apple Symbols" font-weight="normal">☰ </tspan>
+                    <tspan x="46.0976562" y="191" font-size="20">Navigation</tspan>
+                </text>
+            </g>
+            <rect id="Rectangle-14-copy" stroke="#D0011B" stroke-width="10" sketch:type="MSShapeGroup" x="284" y="0" width="319" height="480"></rect>
+            <text id="Text" sketch:type="MSTextLayer" font-family="Arial MT Std" font-size="20" font-style="condensed" font-weight="bold" fill="#000000">
+                <tspan x="296" y="67">“Full streen” content</tspan>
+            </text>
+        </g>
+        <text id="Medium-Screen" sketch:type="MSTextLayer" font-family="Arial MT Std" font-size="36" font-style="condensed" font-weight="bold" sketch:alignment="middle" fill="#000000">
+            <tspan x="2616.494" y="27">Medium Screen</tspan>
+            <tspan x="2624.324" y="70">(e.g. &lt; 640 px)</tspan>
+        </text>
+        <g id="Group" sketch:type="MSLayerGroup" transform="translate(2171.000000, 102.000000)">
+            <g id="Group-copy" transform="translate(0.000000, 2.000000)">
+                <path d="M0,136 L0,205 L144.753906,205 L285,205 L285,136 L0,136 Z" id="Rectangle-1" stroke="#979797" fill="#0099CC" sketch:type="MSShapeGroup"></path>
+                <rect id="Rectangle-1-copy" stroke="#979797" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="285" height="136"></rect>
+                <rect id="Rectangle-2" stroke="#979797" fill="#D8D8D8" sketch:type="MSShapeGroup" x="0" y="205" width="285" height="488"></rect>
+                <text id="HEADER" sketch:type="MSTextLayer" font-family="Arial MT Std" font-size="24" font-style="condensed" font-weight="bold" fill="#000000">
+                    <tspan x="12" y="32">HEADER</tspan>
+                </text>
+                <text id="Sub-header" sketch:type="MSTextLayer" font-family="Arial MT Std" font-size="20" font-style="condensed" font-weight="bold" fill="#000000">
+                    <tspan x="12" y="160">Sub-header</tspan>
+                </text>
+                <text id="UI-Panel-1" sketch:type="MSTextLayer" font-family="Arial MT Std" font-size="20" font-style="condensed" font-weight="bold" fill="#000000">
+                    <tspan x="12" y="231">UI Panel 1</tspan>
+                </text>
+                <text id="-☰-Navigation" sketch:type="MSTextLayer" font-family="Arial MT Std" font-size="24" font-style="condensed" font-weight="bold" fill="#000000">
+                    <tspan x="11" y="191"> </tspan>
+                    <tspan x="17" y="191" font-family="Apple Symbols" font-weight="normal">☰ </tspan>
+                    <tspan x="46.0976562" y="191" font-size="20">Navigation</tspan>
+                </text>
+            </g>
+            <rect id="Rectangle-3" stroke="#979797" sketch:type="MSShapeGroup" x="284" y="1" width="560" height="480"></rect>
+            <rect id="Rectangle-1-copy-2" stroke="#979797" fill="#FFFFFF" sketch:type="MSShapeGroup" x="284" y="0" width="560" height="40"></rect>
+            <rect id="Rectangle-5" stroke="#F7F7F7" fill="#D8D8D8" sketch:type="MSShapeGroup" x="843" y="0" width="285" height="575"></rect>
+            <text id="UI-Panel-2" sketch:type="MSTextLayer" font-family="Arial MT Std" font-size="20" font-style="condensed" font-weight="bold" fill="#000000">
+                <tspan x="859" y="28">UI Panel 2</tspan>
+            </text>
+            <text id="-☰-Lorem" sketch:type="MSTextLayer" font-family="Arial MT Std" font-size="24" font-style="condensed" font-weight="bold" fill="#000000">
+                <tspan x="291" y="28"> </tspan>
+                <tspan x="297" y="28" font-family="Apple Symbols" font-weight="normal">☰ </tspan>
+                <tspan x="326.097656" y="28" font-size="20">Lorem</tspan>
+            </text>
+            <g id="Details---+-Rectangle-11-+-Rectangle-11-copy-+-Rectangle-11-copy-2" transform="translate(743.000000, 13.000000)" fill="#000000">
+                <text id="Ipsum--" sketch:type="MSTextLayer" font-family="Arial MT Std" font-size="20" font-style="condensed" font-weight="bold">
+                    <tspan x="0" y="15">Ipsum</tspan>
+                    <tspan x="50" y="15" font-size="24"> </tspan>
+                    <tspan x="56" y="15" font-family="Apple Symbols" font-size="24" font-weight="normal"> </tspan>
+                </text>
+                <g id="Rectangle-11-+-Rectangle-11-copy-+-Rectangle-11-copy-2" transform="translate(71.000000, 0.000000)" sketch:type="MSShapeGroup">
+                    <rect id="Rectangle-11" x="0" y="7" width="4" height="11"></rect>
+                    <rect id="Rectangle-11-copy" x="6" y="0" width="4" height="18"></rect>
+                    <rect id="Rectangle-11-copy-2" x="12" y="5" width="4" height="13"></rect>
+                </g>
+            </g>
+            <rect id="Rectangle-14-copy" stroke="#D0011B" stroke-width="10" sketch:type="MSShapeGroup" x="2" y="2" width="560" height="480"></rect>
+            <text id="Text" sketch:type="MSTextLayer" font-family="Arial MT Std" font-size="20" font-style="condensed" font-weight="bold" fill="#000000">
+                <tspan x="298" y="67">“Full streen” content</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

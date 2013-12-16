@@ -77,8 +77,8 @@ var ra = function(window, document) {
     // binds an event listener
     var bind = function (obj, event, callback) {
 	if (!obj.addEventListener) {
-	    //ie8
-	    obj.attachEvent(event, callback);
+	    // IE8
+	    obj.attachEvent('on'+event, callback);
 	} else {
 	    obj.addEventListener(event, callback, false);
 	};
@@ -142,14 +142,25 @@ var ra = function(window, document) {
 	};
 	// translate container to view offscreen panels
 	var _gotoX = function (x) {
-	    css(container, {transform: "translate(" + x +"px, 0px)"});
+	    if (pfx('transform') === null) {
+		// IE8
+		css(container, {left: x+'px'});
+	    } else {
+		css(container, {transform: "translate(" + x +"px, 0px)"});
+	    };
+	};
+	var _getWindowWidth = function () {
+	    return window.innerWidth || document.documentElement.clientWidth;
+	};
+	var _getWindowHeight = function () {
+	    return window.innerHeight || document.documentElement.clientHeight;
 	};
 	// check to see if the screen changed from small to large or vice versa
 	var _checkScreenChange = function () {
 	    if (screenSize() === full) {
 		return false;
-	    };
-	    if (window.innerWidth < config.minWidth) {
+	    };  
+	    if (_getWindowWidth() < config.minWidth) {
 		if (screenSize() === small) {
 		    return false;
 		} else {
@@ -174,11 +185,11 @@ var ra = function(window, document) {
 		    // if the screen is now small
 		    // move headmatter to left panel
 		    panelLContent.insertBefore(headMatter,panelLContent.childNodes[0]);
-		    h = window.innerHeight-responsiveMenu.offsetHeight;
+		    h = _getWindowHeight()-responsiveMenu.offsetHeight;
 		    w = config.panelWidth+'px';
 		    css(panelL, {width: w, height: ''});
 		    css(main, {height: h+'px', width:'', left:''});
-		    css(panelR, {width: w, left:'100%',});
+		    css(panelR, {width: w, left:'100%'});
 		} else if (screenSize() === large) {
 		    // if the screen is now large
 		    // move headmatter to top
@@ -200,14 +211,12 @@ var ra = function(window, document) {
 	    };
 	    if (screenSize() === large) {
 		// resize panels
-		w = window.innerWidth-panelL.offsetWidth;
-		h = window.innerHeight-headMatter.offsetHeight;
+		h = _getWindowHeight()-headMatter.offsetHeight;
+		w = _getWindowWidth()-panelL.offsetWidth;
 		css(panelL, {height: h+'px'});
 		css(panelR, {width: w+'px'});
 		h -= panelR.offsetHeight;
 		css(main, {width: w+'px', height: h+'px'});
-	    } else if (screenSize() === small) {
-
 	    };
 	};
 	// turn off panel
@@ -305,3 +314,4 @@ var ra = function(window, document) {
     return ra;
 
 }(window, document);
+
