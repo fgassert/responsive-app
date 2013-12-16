@@ -163,6 +163,9 @@ img {
   height: 100%;
   left: 100%;
 }
+.ra-small #ra-panel-r-content {
+  height: 100%;
+}
 .ra-small .ra-hidewhensmall {
   display: none !important;
 }
