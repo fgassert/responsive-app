@@ -4,10 +4,10 @@
   <title>Responsive App</title>
   <meta charset='UTF-8'/>
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-  <link href='/responsive-app/css/ra.css' rel='stylesheet' />
-  <link href='/responsive-app/css/style.css' rel='stylesheet' />
+  <link href='css/ra.css' rel='stylesheet' />
+  <link href='css/style.css' rel='stylesheet' />
   <!--[if IE]>
-  <script src='/responsive-app/js/classList.min.js'></script>
+  <script src='js/classList.min.js'></script>
   <![endif]-->
 </head>
 <body>
@@ -125,7 +125,8 @@ His at epicurei mandamus scripserit, mea ad iuvaret tacimates. Dolor melius taci
       </div>
       <div id='ra-cover' class='ra-hidden'></div>
     </div>
-    <script src='/responsive-app/js/ra.js'></script>
-    <script>ra = new ra();</script>
+    <!--Initialize the responsive app framework!-->
+    <script src='js/ra.js'></script>
+    <script>ra = new ra({});</script>
 </body>
 </html>
