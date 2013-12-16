@@ -1,5 +1,6 @@
 ---
 title: Responsive App
+options: {}
 ---
 <!DOCTYPE html>
 <html>
@@ -7,10 +8,10 @@ title: Responsive App
   <title>{{page.title}}</title>
   <meta charset='UTF-8'/>
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-  <link href='{{site.baseurl}}/css/ra.css' rel='stylesheet' />
-  <link href='{{site.baseurl}}/css/style.css' rel='stylesheet' />
+  <link href='css/ra.css' rel='stylesheet' />
+  <link href='css/style.css' rel='stylesheet' />
   <!--[if IE]>
-  <script src='{{site.baseurl}}/js/classList.min.js'></script>
+  <script src='js/classList.min.js'></script>
   <![endif]-->
 </head>
 <body>
@@ -57,7 +58,8 @@ title: Responsive App
       </div>
       <div id='ra-cover' class='ra-hidden'></div>
     </div>
-    <script src='{{site.baseurl}}/js/ra.js'></script>
-    <script>ra = new ra();</script>
+    <!--Initialize the responsive app framework!-->
+    <script src='js/ra.js'></script>
+    <script>ra = new ra({{page.options}});</script>
 </body>
 </html>
