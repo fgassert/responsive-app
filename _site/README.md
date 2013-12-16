@@ -1,7 +1,9 @@
 Responsive App
 ---
-A lightweight responsive full screen web appliction framework.
-Built in html, CSS3, and javascript.
+A lightweight responsive framework for fullscreen web applications.
+Built in HTML, CSS3, and javascript.
+
+Supports all modern browsers, IE 8+, iOS.
 
 ### TODO
  - [ ] Verify IE and Mobile Support
@@ -10,10 +12,21 @@ Built in html, CSS3, and javascript.
  - [ ] Add support for subpanels
  - [ ] Write documentation
 
-### Features
- - Supports all modern browsers, IE 9+, iOS. Limited functionality in IE 7+
-
 ### How it works
+The responsive app framework divides the screen realestate into four sections: two responsive panels, headmatter, and main content.
+
+![layout](http://raw.github.com/fgassert/responsive-app/master/fullscreen-app-layout.png)
+
+The framework is designed to be easily modified by inserting HTML into these sections. Rather than creating a layout on the fly, the framework relies on static HTML and CSS for better performance.
+
+ra.js monitors window size and moves the respective panels. The main element is a div called `#ra-container`, which slides to the left and right to reveal the side panels when on small screens.
+
+The `#ra-container` element is assigned a class depending on the screen mode:
+```
+.ra-large /* for normal window sizes */
+.ra-small /* for small window sizes */
+.ra-fullscreen /* when in full screen mode */
+```
 
 Use
 ===
