@@ -55,18 +55,14 @@ The Responsive App framework is built using [Jekyll](http://jekyllrb.com) which 
 Fork this repository, switch to the `gh-pages` branch and replace `_includes/main-content.html` with your own content.
 Go to http://{username}/github.io/responsive-app/ to see the changes!
 
-<<<<<<< HEAD
-### ra.js Options, methods, and events
-=======
 `_templates/ra.html` is the main template for the Responsive app framework.
 
 `_includes/*` holds the html content for the app. Edit these files and `css/style.css`.
 
 GitHub Pages and Jekyll will automatically compile the `gh-pages` repository into a static site located in the `_site` folder. The `index.html` file in the base directory tells Jekyll to use the `ra.html` template which then loads up the content in the `_includes` folder. Any non-Jekyll files in the base directory including the `css` and `js` folders will be copied into the `_site` directory. 
 
-ra.js Options and methods
+ra.js Options, methods, and events
 ===
->>>>>>> 22a433b294a6eca4386d6fcbf9e1bcdcc599e944
 
 Initialize the Responsive App framework using `ra = new ra({options})`.
 
