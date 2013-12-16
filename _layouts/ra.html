@@ -10,41 +10,30 @@ options: {}
   <meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no' />
   <link href='css/ra.css' rel='stylesheet' />
   <link href='css/style.css' rel='stylesheet' />
-  <script src='js/classList.js'></script>
+  <!--[if IE]>
+    <script src='js/classList.js'></script>
+    <![endif]-->
+  {% include _head_.html %}
 </head>
 <body>
-
     <div id='ra-container' class='ra-large'>
       <div id='ra-headmatter'>
-	<div id='ra-header' class='clearfix'>
-	  {% include header-text.html %}
-	</div>
-	<div id='ra-nav' class='clearfix'>
-	  <div id='ra-nav-subhead'>
-	    {% include subhead.html %}
-	  </div>
-	  <div id='ra-nav-btn-showhide' class='ra-btn ra-hidewhenlarge'>
-	    {% include nav-showhide.html %}
-	  </div>
-	  <div id='ra-nav-buttons'>
-	    {% include nav-buttons.html %}
-	  </div>
-	</div>
+	{% include header.html %}
       </div>
       <div id='ra-panel-l'>
 	<div id='ra-panel-l-content'>
 	  {% include panel1-content.html %}
 	</div>
       </div>
-      <div id='ra-responsivemenu' class='clearfix ra-hidewhenlarge'>
+      <div id='ra-responsivemenu' class='clearfix'>
 	<div id='ra-responsivemenu-header'>
 	  {% include responsivemenu-header.html %}
 	</div>
 	<div id='ra-responsivemenu-btn-l' class='ra-btn'>
-	  {% include responsivemenu-l.html %}
+	  {% include responsivemenu-btn-l.html %}
 	</div>
 	<div id='ra-responsivemenu-btn-r' class='ra-btn'>
-	  {% include responsivemenu-r.html %}
+	  {% include responsivemenu-btn-r.html %}
 	</div>
       </div>
       <div id='ra-main'>

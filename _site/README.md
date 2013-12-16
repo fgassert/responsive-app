@@ -3,7 +3,7 @@ Responsive App
 A lightweight responsive framework for fullscreen web applications.
 Built in HTML, CSS3, and javascript.
 
-Supports all modern browsers, IE 8+, iOS.
+Supports all modern browsers, IE 9+, iOS. Limited functionality in IE8.
 
 ### TODO
  - [ ] Verify IE and Mobile Support
@@ -58,7 +58,7 @@ The files in `_includes` hold the html content for the app.
 Fork this repository, switch to the `gh-pages` branch and replace `_includes/main-content.html` with your own content.
 Go to http://{username}/github.io/responsive-app/ to see the changes!
 
-### ra.js Options and methods
+### ra.js Options, methods, and events
 
 Initialize the Responsive App framework using `ra = new ra({options})`.
 
@@ -68,7 +68,7 @@ Initialize the Responsive App framework using `ra = new ra({options})`.
   minWidth:640,        // minimum window width (px) for screen size to count as large, 
                        //  when window width is smaller than minWidth the layout will be condensed
   panelWidth:284,      // panel width (px) in both large screen and small screen layouts.
-  panel2MaxHeight:200, // panel 2 max content height (px) when on screen bottom (large screen layout).
+  panel2MaxHeight:150, // panel 2 max content height (px) when on screen bottom (large screen layout).
   panel1:true,         // toggle panel 1 on/off
   panel2:true          // toggle panel 2 on/off
 }
@@ -78,17 +78,23 @@ Initialize the Responsive App framework using `ra = new ra({options})`.
 
 The ra object supports the following methods
 ```
-ra.gotoPanel({panel #})  \\ When in small screen mode, shifts the view to the given panel
-                         \\  0: main, 1: left, 2: right
-ra.resize()              \\ Forces ra to recalculate panel sizes
-ra.screenSize()          \\ Returns the current mode (#ra-container.className)
-                         \\  Small: 'ra-small', Large: 'ra-large', Fullscreen, 'ra-fullscreen'
-ra.toggleFullScreen()    \\ Toggles fullscreen mode. 
-                         \\  In fullscreen mode the main content fills the entire window
-ra.setConfig({options})  \\ Edits the ra options and recalculates panel appearance
-ra.getConfig()           \\ Returns the current configuration
+ra.gotoPanel({panel #})  // When in small screen mode, shifts the view to the given panel
+                         //  0: main, 1: left, 2: right
+ra.resize()              // Forces ra to recalculate panel sizes
+ra.screenSize()          // Returns the current mode (#ra-container.className)
+                         //  Small: 'ra-small', Large: 'ra-large', Fullscreen, 'ra-fullscreen'
+ra.toggleFullScreen()    // Toggles fullscreen mode. 
+                         //  In fullscreen mode the main content fills the entire window
+ra.setConfig({options})  // Edits the ra options and recalculates panel appearance
+ra.getConfig()           // Returns the current configuration
 ```
 
+**Events:**
+ra.js will dispatch events on the `#ra-container` element
+```
+'ra-screenchange'	// occurs when screen mode changes
+'ra-panelchange'	// occurs when panel changes
+```
 
 
 
