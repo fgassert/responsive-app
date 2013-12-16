@@ -7,7 +7,6 @@ GEM
     colorator (0.1)
     commander (4.1.5)
       highline (~> 1.6.11)
-    execjs (2.0.2)
     fast-stemmer (1.0.2)
     ffi (1.9.3)
     github-pages (10)
@@ -49,10 +48,6 @@ GEM
     rdiscount (2.1.7)
     redcarpet (2.3.0)
     safe_yaml (0.9.7)
-    stylus (1.0.0)
-      execjs
-      stylus-source
-    stylus-source (0.38.0)
     syntax (1.0.0)
     yajl-ruby (1.1.0)
 
@@ -61,4 +56,3 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  stylus
