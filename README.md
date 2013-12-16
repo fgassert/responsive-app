@@ -36,7 +36,7 @@ Clone the master branch. All dependencies are held in the `_site` folder.
 
 **Edit these files:**
 
-`_site/index.html`: Base html. Rather than creating a layout on the fly, the framework relies on static HTML and CSS for better performance [read the source](http://github.com/fgassert/responsive-app/_site/index.html) to see where to insert content.
+`_site/index.html`: Base html. Rather than creating a layout on the fly, the framework relies on static HTML and CSS for better performance [read the source](https://github.com/fgassert/responsive-app/blob/master/_site/index.html) to see where to insert content.
 
 `_site/css/style.css`: Additional styling information, edit this document to change framework appearance
 
@@ -52,13 +52,17 @@ Clone the master branch. All dependencies are held in the `_site` folder.
 
 The Responsive App framework is built using [Jekyll](http://jekyllrb.com) which uses the [Liquid](http://liquidmarkup.org) templating engine. 
 
-`_templates/ra.html` is the main template for the Responsive app framework.
-The files in `_includes` hold the html content for the app.
-
 Fork this repository, switch to the `gh-pages` branch and replace `_includes/main-content.html` with your own content.
 Go to http://{username}/github.io/responsive-app/ to see the changes!
 
-### ra.js Options and methods
+`_templates/ra.html` is the main template for the Responsive app framework.
+
+`_includes/*` holds the html content for the app. Edit these files.
+
+GitHub Pages and Jekyll will automatically compile the `gh-pages` repository into a static site located in the `_site` folder. The `index.html` file in the base directory tells Jekyll to use the `ra.html` template which then loads up the content in the `_includes` folder.
+
+ra.js Options and methods
+===
 
 Initialize the Responsive App framework using `ra = new ra({options})`.
 
@@ -76,7 +80,7 @@ Initialize the Responsive App framework using `ra = new ra({options})`.
 
 **Methods:**
 
-The ra object supports the following methods
+The `ra` object supports the following methods
 ```
 ra.gotoPanel({panel #})  \\ When in small screen mode, shifts the view to the given panel
                          \\  0: main, 1: left, 2: right
