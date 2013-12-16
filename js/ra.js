@@ -132,9 +132,9 @@ var ra = function(window, document) {
 	var config = { 
 	    minWidth:640, // minimum width for screen size to count as large
 	    panelWidth:284, // panel width
-	    panel2MaxHeight:200, //panel 2 max height when on screen bottom
-	    panel1:true, //panel 1 on
-	    panel2:true //panel 2 on
+	    panel2MaxHeight:200, // panel 2 max height when on screen bottom
+	    panel1:true, // panel 1 on
+	    panel2:true // panel 2 on
 	};
 
 	var screenSize = function() {

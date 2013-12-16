@@ -37,9 +37,8 @@ Clone the master branch. All dependencies are held in the `_site` folder.
 
 ### Option 2: Jekyll + GitHub Pages
 
-The Responsive App framework is built using [Jekyll](http://jekyllrb.com) and [Stylus](http://learnboost.github.io/stylus/) for css preprocessing.
+The Responsive App framework is built using [Jekyll](http://jekyllrb.com) which uses the [Liquid](http://liquidmarkup.org) templating engine. 
 
-Jekyll uses the [Liquid](http://liquidmarkup.org) templating engine.
 `_templates/ra.html` is the main template for the Responsive app framework.
 The files in `_includes` hold the html content for the app.
 
