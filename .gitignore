@@ -2,4 +2,5 @@
 #emacs
 *#
 *~
-
+Gemfile.lock
+node_modules
