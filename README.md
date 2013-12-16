@@ -13,7 +13,7 @@ Supports all modern browsers, IE 8+, iOS.
  - [ ] Write documentation
 
 ### How it works
-The responsive app framework divides the screen realestate into four sections: two responsive panels, headmatter, and main content.
+The responsive app framework divides the screen realestate into four sections: two responsive panels, headmatter, and main content. See a [demo](http://fgassert.github.io/responsive-app/).
 
 ![layout](http://raw.github.com/fgassert/responsive-app/master/fullscreen-app-layout.png)
 
