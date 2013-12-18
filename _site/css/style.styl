@@ -7,34 +7,17 @@
 #ra-container
   transition transform .5s
   -webkit-transition -webkit-transform .5s
-
+#ra-panel-l
+#ra-panel-r
+  transition width .5s
+  -webkit-transition width .5s
 /* your styles here */
-#ra-nav-buttons ul
-  padding-left 0
-  li
-    padding 3px
-    display inline-block
-    zoom 1
-    *display inline
-    list-style none
 
-/* the .ra-small class is added to #ra-container when in small screen mode
+/* #ra-container has .ra-small .ra-large or .ra-fullscreen classes
+ * depending on app state
  * this can be very useful for styling
- * .ra-large is added when in large screem mode respectively
  */
-.ra-small
-  #ra-nav-buttons 
-    width 100%
-    ul li
-      display block
-      width 100%
 
-#ra-panel-l-content ul
-  padding-left 0
-  li
-    display block
-    width 100%
-    list-style none
 
 #ra-panel-l
   background #eef
@@ -44,9 +27,5 @@
   background #fee
 #ra-responsivemenu
   background #eee
-#ra-nav
-  background #eff
-#ra-nav-buttons
-  background #fef
 #ra-headmatter
   background #ffe

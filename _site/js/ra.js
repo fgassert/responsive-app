@@ -77,28 +77,14 @@ var ra = function(window, document) {
 
     // binds an event listener
     bind = function (obj, event, callback) {
-	if (!obj.addEventListener) {
-	    // IE8
-	    obj.attachEvent('on'+event, callback);
-	} else {
-	    obj.addEventListener(event, callback, false);
-	};
-    },
-    arrAddC = function (obj, c) {
-	for (var i=0;i<obj.length;i++) {
-	    addC(obj[i],c);
-	};
+	obj.addEventListener ? obj.addEventListener(event, callback, false)
+	: obj.attachEvent('on'+event, callback);
     },
     addC = function (obj, c) {
-	obj.classList.add(c);
-    },
-    arrRemoveC = function (obj, c) {
-	for (var i=0;i<obj.length;i++) {
-	    removeC(obj[i],c);
-	};
+	obj.classList && obj.classList.add(c);
     },
     removeC = function (obj, c) {
-	obj.classList.remove(c);
+	obj.classList && obj.classList.remove(c);
     },
     getWindowWidth = function () {
 	return window.innerWidth || document.documentElement.clientWidth;
@@ -108,6 +94,13 @@ var ra = function(window, document) {
     },
     px = function ( numeric ) {
 	return numeric+'px';
+    },
+    dispatchEvent = function( el, eventName ) {
+	if (document.createEvent && el.dispatchEvent) {
+            evt = document.createEvent('HTMLEvents');
+            evt.initEvent(eventName,true,true);
+	    el.dispatchEvent(evt);
+	}
     },
 
     ra = function (options) {
@@ -124,7 +117,7 @@ var ra = function(window, document) {
 	panelR = byId('ra-panel-r'),
 	panelRContent = byId('ra-panel-r-content'),
 	cover = byId('ra-cover'),
-	main = byId('ra-main'),
+	main = byId('ra-main'),	
 
 	// class names
 	hide = 'ra-hidden',
@@ -145,98 +138,74 @@ var ra = function(window, document) {
 	},
 
 	// custom events
-	_screenChangeEvent = function( target ) {
-	    target.dispatchEvent(
-		new CustomEvent(
-		    "ra-screenchange", 
-		    { details: screenSize(), bubbles: true, cancelable: true }
-		)
-	    );
-	},
-	_panelChangeEvent = function( target ) {
-	    target.dispatchEvent(
-		new CustomEvent(
-		    "ra-panelchange", 
-		    { details: currentPanel, bubbles: true, cancelable: true }
-		)
-	    );
-	},
+	screenEvt = 'ra-screenchange',
+	panelEvt = 'ra-panelchange',
 
 	screenSize = function() {
 	    return container.className;
 	},
 	// translate container to view offscreen panels
 	_gotoX = function (x) {
-	    if (pfx('transform') === null) {
-		// IE8
-		css(container, {left: x+'px'});
-	    } else {
-		css(container, {transform: "translate(" + x +"px, 0px)"});
-	    };
+	    pfx('transform') === null ? css(container, {left: x+'px'})
+	    : css(container, {transform: "translate(" + x +"px, 0px)"});
 	},
 	// check to see if the screen changed from small to large or vice versa
 	_checkScreenChange = function () {
-	    if (screenSize() === full) {
-		return false;
-	    };  
 	    if (getWindowWidth() < config.minWidth) {
-		if (screenSize() === small) {
-		    return false;
-		} else {
+		if (screenSize() !== small) {
 		    container.className = small;
-		    return true;
+		    _onScreenChange();
+		    dispatchEvent(screenEvt);
 		};
-	    } else {
-		if (screenSize() === large) {
-		    return false;
-		} else {
-		    container.className = large;
-		    return true;
-		};
+	    } else if (screenSize() !== large) {
+		container.className = large;
+		_onScreenChange();
+		dispatchEvent(screenEvt);
 	    };
 	},
 	// resize respective panels
+	_onScreenChange = function ( ) {
+	    if (screenSize() === small) {
+		// move headmatter to left panel
+		panelLContent.insertBefore(headMatter,panelLContent.childNodes[0]);
+		// set panel sizes
+		css(main, {width:'100%',left:0})
+		css(panelL, {height:'100%'});
+		css(panelLContent, {width: px(config.panelWidth)});
+		css(panelR, {left:'100%'});
+		css(panelRContent, {width: px(config.panelWidth),'max-height':''});
+	    } else if (screenSize() === large) {
+		// move headmatter to top
+		container.insertBefore(headMatter,container.childNodes[0]);
+		// set panel sizes
+		css(panelL, {width: px(config.panelWidth)});
+		css(panelLContent, {width: px(config.panelWidth)});
+		css(panelRContent, {'max-height':px(config.panel2MaxHeight)});
+		// reset screen view
+		gotoPanel(0);
+	    } else if (screenSize() === full) {
+		// if the screen is now full
+		// set panel sizes
+		css(main, {height:'100%', width:'100%', left:'100%'});
+		// reset screen view
+		gotoPanel(0);
+	    };  
+	},
 	_onResize = function (x, force) {
-	    var w, h;
-	    if (_checkScreenChange() || force) {
-		// dispatch event
-		_screenChangeEvent(container);
-		// only when screen mode changes 
-		if (screenSize() === small) {
-		    // if the screen is now small
-		    // move headmatter to left panel
-		    panelLContent.insertBefore(headMatter,panelLContent.childNodes[0]);
-		    w = px(config.panelWidth);
-		    css(main, {width:'',left:''})
-		    css(panelL, {width: w, height: ''});
-		    css(panelR, {width: w, left:'100%'});
-		    css(panelRContent, {'max-height':''});
-		} else if (screenSize() === large) {
-		    // if the screen is now large
-		    // move headmatter to top
-		    container.insertBefore(headMatter,container.childNodes[0]);
-
-		    css(panelL, {width: px(config.panelWidth)});
-		    css(panelRContent, {'max-height':px(config.panel2MaxHeight)});
-		    // reset screen view
-		    gotoPanel(0);
-		} else if (screenSize() === full) {
-		    // reset css
-		    css(main, {height: '', width:'', left:''});
-		    gotoPanel(0);
-		};  
-	    };
+	    _checkScreenChange();
+	    if (force) { _onScreenChange(); };
 	    if (screenSize() === large) {
-		// resize panels
+		var h, w;
 		h = getWindowHeight()-headMatter.offsetHeight;
-		w = getWindowWidth()-panelL.offsetWidth;
+		w = getWindowWidth()-config.panelWidth;
 		css(main, {left: px(w)});
 		css(panelL, {height: px(h)});
-		css(panelR, {left: px(panelL.offsetWidth), width: px(w)})
+		css(panelR, {left: px(config.panelWidth)});
+		css(panelRContent, {width: px(w)});
 		h -= panelR.offsetHeight;
-		css(main, {left: px(panelL.offsetWidth), width: px(w), height: px(h)});
+		css(main, {left: px(config.panelWidth), width: px(w), height: px(h)});
 	    } else if (screenSize() === small) {
-		css(main,{height:px(getWindowHeight()-responsiveMenu.offsetHeight)});	
+		css(main,{height:px(getWindowHeight()-responsiveMenu.offsetHeight)});
 	    };
 	},
 	// turn off panel
@@ -264,11 +233,10 @@ var ra = function(window, document) {
 	toggleFullScreen = function( ) {
 	    if (screenSize() === full) {
 		container.className = undefined;
-		resize();
 	    } else {
 		container.className = full;
-		resize();
 	    };
+	    resize();
 	},
 	// gotoPanel scrolls container to show panel 
 	// if panel is currently shown return to showing panel0
@@ -278,8 +246,7 @@ var ra = function(window, document) {
 		currentPanel = 0;
 		// remove cover
 		addC(cover, hide);
-		// dispatch event
-		_panelChangeEvent(container);
+		dispatchEvent(panelEvt);		
 	    } else if (screenSize() === small) { 
 		currentPanel = panelId;
 		// place cover over the main content
@@ -289,13 +256,8 @@ var ra = function(window, document) {
 		} else if (panelId === 2) {
 		    _gotoX(-config.panelWidth);
 		};
-		_panelChangeEvent(container);
+		dispatchEvent(panelEvt);
 	    };
-	},
-	// Temporarily set panel1 width
-	setPanel1Width = function ( w ) {
-	    css(panelL, {width: w+'px'});
-	    //TODO
 	},
 	// sets config and resets display
 	setConfig = function(options) {
@@ -317,6 +279,55 @@ var ra = function(window, document) {
 	    _onResize(false,true); 
 	};
 	
+	// Sub panel
+	var subPanel = function (child, width) {
+	    width = width || config.panelWidth;
+	    var sub = new _subPanel(children, width);
+	    bind(container,screenEvt,function(){sub.hide();});
+	    bind(container,panelEvt,function(){sub.hide();});
+	    return sub;
+	},
+	_subPanel = function (child, width) {
+	    var el = document.createElement('div')
+	    addC(el,hide);
+	    addC(el,'ra-subpanel-l');
+	    css(el,{width:px(width)});
+
+	    this._parent = panelL;
+	    this._parent.appendChild(el);
+
+	    if (child.nodeName) {
+		el.appendChild(child);
+	    } else {
+		for (var c in child) {
+		    if (child[c].nodeName) {
+			el.appendChild(child[c]);
+		    };
+		};
+	    };
+
+	    this.el = el;
+	};
+	_subPanel.prototype = {
+	    show: function ( ) {
+		if (this.el.classList.contains(hide)) {
+		    removeC(this.el,hide);
+		    css(this._parent,{
+			width:px(this._parent.offsetWidth+this.el.offsetWidth)
+		    });
+		    _onResize();
+		};
+	    },
+	    hide: function ( ) {
+		if (!this.el.classList.contains(hide)) {
+		    css(this._parent,{
+			width:px(this._parent.offsetWidth-this.el.offsetWidth)
+		    });
+		    addC(this.el,hide);
+		    _onResize();
+		};
+	    }
+	    };
 	
 	// add event listeners to buttons
 	bind(btnL,'click',function(x){gotoPanel(1)});
@@ -325,15 +336,15 @@ var ra = function(window, document) {
 	// detect screen resize and orientation change (mobile)
 	bind(window,'resize',_onResize);
 	bind(document,'orientationchange',_onResize);
-
+	
 	// bind public properties
 	this.gotoPanel = gotoPanel;
 	this.resize = resize;
 	this.screenSize = screenSize;
 	this.toggleFullScreen = toggleFullScreen;
-	this.setConfig = setConfig;
-	this.getConfig = getConfig;
-	this.setPanel1Width = setPanel1Width;
+	this.setOptions = setConfig;
+	this.getOptions = getConfig;
+	this.subPanel = subPanel;
 
 	// call setConfig and onResize to initialize display
 	setConfig(options);

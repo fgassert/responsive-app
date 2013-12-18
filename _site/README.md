@@ -3,17 +3,16 @@ Responsive App
 A lightweight responsive framework for fullscreen web applications.
 Built in HTML, CSS3, and javascript.
 
-Supports all modern browsers, IE 9+, iOS. Limited functionality in IE8.
+Supports all modern browsers, IE 9+, iOS. Functions in IE8.
 
 ### TODO
  - [ ] Verify IE and Mobile Support
  - [ ] Add build scripts
  - [ ] Add examples
- - [ ] Add support for subpanels
- - [ ] Write documentation
+
 
 ### How it works
-The responsive app framework divides the screen realestate into four sections: two responsive panels, headmatter, and main content.
+The responsive app framework divides the screen realestate into four sections: two responsive panels, headmatter, and main content. See a [demo](http://fgassert.github.io/responsive-app/).
 
 ![layout](http://raw.github.com/fgassert/responsive-app/master/fullscreen-app-layout.png)
 
@@ -36,7 +35,7 @@ Clone the master branch. All dependencies are held in the `_site` folder.
 
 **Edit these files:**
 
-`_site/index.html`: Base html. Rather than creating a layout on the fly, the framework relies on static HTML and CSS for better performance [read the source](http://github.com/fgassert/responsive-app/_site/index.html) to see where to insert content.
+`_site/index.html`: Base html. Rather than creating a layout on the fly, the framework relies on static HTML and CSS for better performance [read the source](https://github.com/fgassert/responsive-app/blob/master/_site/index.html) to see where to insert content.
 
 `_site/css/style.css`: Additional styling information, edit this document to change framework appearance
 
@@ -52,13 +51,21 @@ Clone the master branch. All dependencies are held in the `_site` folder.
 
 The Responsive App framework is built using [Jekyll](http://jekyllrb.com) which uses the [Liquid](http://liquidmarkup.org) templating engine. 
 
-`_templates/ra.html` is the main template for the Responsive app framework.
-The files in `_includes` hold the html content for the app.
-
 Fork this repository, switch to the `gh-pages` branch and replace `_includes/main-content.html` with your own content.
 Go to http://{username}/github.io/responsive-app/ to see the changes!
 
+<<<<<<< HEAD
 ### ra.js Options, methods, and events
+=======
+`_templates/ra.html` is the main template for the Responsive app framework.
+
+`_includes/*` holds the html content for the app. Edit these files and `css/style.css`.
+
+GitHub Pages and Jekyll will automatically compile the `gh-pages` repository into a static site located in the `_site` folder. The `index.html` file in the base directory tells Jekyll to use the `ra.html` template which then loads up the content in the `_includes` folder. Any non-Jekyll files in the base directory including the `css` and `js` folders will be copied into the `_site` directory. 
+
+ra.js Options and methods
+===
+>>>>>>> 22a433b294a6eca4386d6fcbf9e1bcdcc599e944
 
 Initialize the Responsive App framework using `ra = new ra({options})`.
 
@@ -76,7 +83,7 @@ Initialize the Responsive App framework using `ra = new ra({options})`.
 
 **Methods:**
 
-The ra object supports the following methods
+The `ra` object supports the following methods
 ```
 ra.gotoPanel({panel #})  // When in small screen mode, shifts the view to the given panel
                          //  0: main, 1: left, 2: right
@@ -85,16 +92,29 @@ ra.screenSize()          // Returns the current mode (#ra-container.className)
                          //  Small: 'ra-small', Large: 'ra-large', Fullscreen, 'ra-fullscreen'
 ra.toggleFullScreen()    // Toggles fullscreen mode. 
                          //  In fullscreen mode the main content fills the entire window
-ra.setConfig({options})  // Edits the ra options and recalculates panel appearance
-ra.getConfig()           // Returns the current configuration
+ra.setOptions({options}) // Edits the ra options and recalculates panel appearance
+ra.getOptions()           // Returns the current configuration
+ra.subPanel({children},{width})	 // Creates a subpanel div in Panel 1 
+			 // {children} can be an element or array of elements
+			 // see below for details
 ```
 
 **Events:**
-ra.js will dispatch events on the `#ra-container` element
+ra.js will dispatch custom events on the `#ra-container` element
 ```
 'ra-screenchange'	// occurs when screen mode changes
 'ra-panelchange'	// occurs when panel changes
 ```
 
+**Subpanels**
+Subpanels are full height divs inside the left hand side panel. They increase the width of the panel when shown. These are the only dynamically generated content in ra.js. Create a subpanel with `mypanel = ra.subPanel()`, fill it with `mypanel.el.appendChild({content})` and show it with `mypanel.show()`.
 
+Subpanels have three attributes:
+```
+mypanel.el		// The DOM element, put your content in here using js
+mypanel.show()		// Show the panel
+mypanel.hide()		// Hide the panel
+```
+
+Subpanels default to hidden and need to be manually shown with `mypanel.show()`. In addition, they are automatically hidden when the screen mode or current panel changes (except on IE 8).
 

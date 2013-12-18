@@ -3,14 +3,12 @@ Responsive App
 A lightweight responsive framework for fullscreen web applications.
 Built in HTML, CSS3, and javascript.
 
-Supports all modern browsers, IE 9+, iOS. Limited functionality in IE8.
+Supports all modern browsers, IE 9+, iOS. Functions in IE8.
 
 ### TODO
  - [ ] Verify IE and Mobile Support
  - [ ] Add build scripts
  - [ ] Add examples
- - [ ] Add support for subpanels
- - [ ] Write documentation
 
 ### How it works
 The responsive app framework divides the screen realestate into four sections: two responsive panels, headmatter, and main content. See a [demo](http://fgassert.github.io/responsive-app/).
@@ -89,16 +87,29 @@ ra.screenSize()          // Returns the current mode (#ra-container.className)
                          //  Small: 'ra-small', Large: 'ra-large', Fullscreen, 'ra-fullscreen'
 ra.toggleFullScreen()    // Toggles fullscreen mode. 
                          //  In fullscreen mode the main content fills the entire window
-ra.setConfig({options})  // Edits the ra options and recalculates panel appearance
-ra.getConfig()           // Returns the current configuration
+ra.setOptions({options}) // Edits the ra options and recalculates panel appearance
+ra.getOptions()           // Returns the current configuration
+ra.subPanel({children},{width})	 // Creates a subpanel div in Panel 1 
+			 // {children} can be an element or array of elements
+			 // see below for details
 ```
 
 **Events:**
-ra.js will dispatch events on the `#ra-container` element
+ra.js will dispatch custom events on the `#ra-container` element
 ```
 'ra-screenchange'	// occurs when screen mode changes
 'ra-panelchange'	// occurs when panel changes
 ```
 
+**Subpanels**
+Subpanels are full height divs inside the left hand side panel. They increase the width of the panel when shown. These are the only dynamically generated content in ra.js. Create a subpanel with `mypanel = ra.subPanel()`, fill it with `mypanel.el.appendChild({content})` and show it with `mypanel.show()`.
 
+Subpanels have three attributes:
+```
+mypanel.el		// The DOM element, put your content in here using js
+mypanel.show()		// Show the panel
+mypanel.hide()		// Hide the panel
+```
+
+Subpanels default to hidden and need to be manually shown with `mypanel.show()`. In addition, they are automatically hidden when the screen mode or current panel changes (except on IE 8).
 

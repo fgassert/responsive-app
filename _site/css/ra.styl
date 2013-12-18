@@ -16,7 +16,6 @@ html, body
   margin 0
   height 100%
   width 100%
-  max-width 100%
   position relative
   overflow hidden
 
@@ -27,11 +26,6 @@ img
   border 0
 
 /* responsive-app elements */
-#ra-viewport
-  position absolute
-  width 100%
-  height 100%
-  overflow hidden
 
 /* ra-container element contains all other elements
  * 
@@ -44,16 +38,20 @@ img
  */
 #ra-container
   position absolute
-  left 0px
   width 100%
   height 100%
 
 /* ra-panel1 is positioned on the left and is hidden when screen size is small
  */
 #ra-panel-l
-  position absolute
   width panelsize
+  position absolute
   height 100%
+#ra-panel-l-content
+  height inherit
+  width panelsize
+  float left
+  overflow auto
 
 /* ra-headmatter element contains the header, subheader, and nav
  * 
@@ -71,25 +69,21 @@ img
 /* responsivemenu button shows/hides left panel on click
  */
 #ra-responsivemenu-btn-l
-  position absolute
-  left 0
-  top 0
+  float left
 /* responsivemenu button shows/hides right panel on click
  */
 #ra-responsivemenu-btn-r
-  position absolute
-  right 0
-  top 0
+  float right
+
 #ra-responsivemenu-header
-  display inline
-  text-align center
+  float left
 
 /* main full screen content */
 #ra-main
   position absolute
   overflow-y auto
-  height 100%
   width 100%
+  height 100%
 
 /* right/bottom panel
  * appears at bottom of screen on large screens
@@ -99,8 +93,8 @@ img
   position absolute
   bottom 0
 #ra-panel-r-content
-  overflow-y auto
   float right
+  overflow auto
 
 /* ra-cover covers the main content on small screens when side panels are open
  * clicking on the cover returns the view to the main content
@@ -117,16 +111,8 @@ img
     left panelsize
   #ra-panel-l
     left 0
-  #ra-panel-l-content
-    height inherit
-    overflow-y auto
   #ra-panel-r
     left panelsize
-    min-height 0
-    width 100%
-  #ra-panel-r-content
-    /* default max height for panel when at screen bottom */
-    max-height 150px   
   #ra-responsivemenu
     display none
   .ra-hidewhenlarge
@@ -137,16 +123,14 @@ img
   #ra-main
     left 0
   #ra-panel-l
+    top 0
     right 100%
-    overflow-y auto
-    height 100%
-  #ra-panel-l-content
     height 100%
   #ra-panel-r
-    width panelsize
     height 100%
     left 100%
   #ra-panel-r-content
+    width panelsize
     height 100%
   .ra-hidewhensmall
     display none !important
@@ -162,6 +146,11 @@ img
   #ra-responsivemenu
     display none
 
+/* subpanels */
+.ra-subpanel-l
+  float left
+  overflow auto
+  height inherit
 
 /* hiding elements */
 .ra-hidden
