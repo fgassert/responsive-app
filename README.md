@@ -95,6 +95,7 @@ ra.subPanel({children},{width})	 // Creates a subpanel div in Panel 1
 ```
 
 **Events:**
+
 ra.js will dispatch custom events on the `#ra-container` element
 ```
 'ra-screenchange'	// occurs when screen mode changes
@@ -103,6 +104,8 @@ ra.js will dispatch custom events on the `#ra-container` element
 
 **Subpanels**
 Subpanels are full height divs inside the left hand side panel. They increase the width of the panel when shown. These are the only dynamically generated content in ra.js. Create a subpanel with `mypanel = ra.subPanel()`, fill it with `mypanel.el.appendChild({content})` and show it with `mypanel.show()`.
+
+[Subpanel](http://raw.github.com/fgassert/responsive-app/master/fullscreen-app-layout.png
 
 Subpanels have three attributes:
 ```
