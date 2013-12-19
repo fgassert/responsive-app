@@ -282,7 +282,7 @@ var ra = function(window, document) {
 	// Sub panel
 	var subPanel = function (child, width) {
 	    width = width || config.panelWidth;
-	    var sub = new _subPanel(children, width);
+	    var sub = new _subPanel(child, width);
 	    bind(container,screenEvt,function(){sub.hide();});
 	    bind(container,panelEvt,function(){sub.hide();});
 	    return sub;
@@ -296,11 +296,11 @@ var ra = function(window, document) {
 	    this._parent = panelL;
 	    this._parent.appendChild(el);
 
-	    if (child.nodeName) {
+	    if (child && child.nodeName) {
 		el.appendChild(child);
 	    } else {
 		for (var c in child) {
-		    if (child[c].nodeName) {
+		    if (child[c] && child[c].nodeName) {
 			el.appendChild(child[c]);
 		    };
 		};
