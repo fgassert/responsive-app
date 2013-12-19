@@ -26,6 +26,8 @@ The `#ra-container` element is assigned a class depending on the screen mode:
 .ra-fullscreen /* when in full screen mode */
 ```
 
+In addition ra.css defines two classes: `.ra-hidewhenlarge` and `.ra-hidewhensmall` for elements that you only want to appear when screen mode is large or small.
+
 Use
 ===
 ### Option 1: Edit the html
@@ -102,17 +104,19 @@ ra.js will dispatch custom events on the `#ra-container` element
 'ra-panelchange'	// occurs when panel changes
 ```
 
-**Subpanels**
+### Subpanels:
+
 Subpanels are full height divs inside the left hand side panel. They increase the width of the panel when shown. These are the only dynamically generated content in ra.js. Create a subpanel with `mypanel = ra.subPanel()`, fill it with `mypanel.el.appendChild({content})` and show it with `mypanel.show()`.
 
-[Subpanel](http://raw.github.com/fgassert/responsive-app/master/fullscreen-app-layout.png
+![Subpanel](http://raw.github.com/fgassert/responsive-app/master/fullscreen-app-layout-sub.png)
 
-Subpanels have three attributes:
+Attributes and methods
 ```
 mypanel.el		// The DOM element, put your content in here using js
 mypanel.show()		// Show the panel
 mypanel.hide()		// Hide the panel
+mypanel.setWidth({width}) // Set panel width in px
 ```
 
-Subpanels default to hidden and need to be manually shown with `mypanel.show()`. In addition, they are automatically hidden when the screen mode or current panel changes (except on IE 8).
+Subpanels default to hidden and need to be manually shown with `mypanel.show()`. In addition, they are automatically hidden when the screen mode or current panel changes (Except on IE 8).
 

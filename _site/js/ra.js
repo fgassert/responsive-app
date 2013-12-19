@@ -97,7 +97,7 @@ var ra = function(window, document) {
     },
     dispatchEvent = function( el, eventName ) {
 	if (document.createEvent && el.dispatchEvent) {
-            evt = document.createEvent('HTMLEvents');
+            var evt = document.createEvent('HTMLEvents');
             evt.initEvent(eventName,true,true);
 	    el.dispatchEvent(evt);
 	}
@@ -155,12 +155,12 @@ var ra = function(window, document) {
 		if (screenSize() !== small) {
 		    container.className = small;
 		    _onScreenChange();
-		    dispatchEvent(screenEvt);
+		    dispatchEvent(container,screenEvt);
 		};
 	    } else if (screenSize() !== large) {
 		container.className = large;
 		_onScreenChange();
-		dispatchEvent(screenEvt);
+		dispatchEvent(container,screenEvt);
 	    };
 	},
 	// resize respective panels
@@ -246,7 +246,7 @@ var ra = function(window, document) {
 		currentPanel = 0;
 		// remove cover
 		addC(cover, hide);
-		dispatchEvent(panelEvt);		
+		dispatchEvent(container,panelEvt);		
 	    } else if (screenSize() === small) { 
 		currentPanel = panelId;
 		// place cover over the main content
@@ -256,7 +256,7 @@ var ra = function(window, document) {
 		} else if (panelId === 2) {
 		    _gotoX(-config.panelWidth);
 		};
-		dispatchEvent(panelEvt);
+		dispatchEvent(container,panelEvt);
 	    };
 	},
 	// sets config and resets display
@@ -292,7 +292,7 @@ var ra = function(window, document) {
 	    addC(el,hide);
 	    addC(el,'ra-subpanel-l');
 	    css(el,{width:px(width)});
-
+	    
 	    this._parent = panelL;
 	    this._parent.appendChild(el);
 
@@ -326,6 +326,9 @@ var ra = function(window, document) {
 		    addC(this.el,hide);
 		    _onResize();
 		};
+	    },
+	    setWidth: function ( width ) {
+		css(this.el,{width:px(width)});
 	    }
 	    };
 	
